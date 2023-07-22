@@ -1,9 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import CreateButton from '../ui/partials/buttons/CreateButton.jsx';
 import { PencilOutline, TrashBinOutline } from 'react-ionicons';
-import BaseModal from '../ui/modals/BaseModal.jsx';
 
-const CustomerIndexCard = ({ customer }) => {
+const CustomerIndexCard = ({ customer, onDestroyClick = () => {} }) => {
     const navigate = useNavigate();
 
     /**
@@ -32,6 +31,7 @@ const CustomerIndexCard = ({ customer }) => {
      */
     const redirectCustomerTrash = e => {
         e.stopPropagation();
+        onDestroyClick(customer.id);
     }
 
     return (
@@ -43,7 +43,7 @@ const CustomerIndexCard = ({ customer }) => {
             </div>
 
             <div className={'flex gap-4'}>
-                <CreateButton onClick={redirectCustomerEdit}>
+                <CreateButton onClickHandler={redirectCustomerEdit}>
                     <PencilOutline
                         color={'#2C86DB'}
                         title={'delete'}
@@ -52,7 +52,7 @@ const CustomerIndexCard = ({ customer }) => {
                     />
                 </CreateButton>
 
-                <CreateButton onClick={redirectCustomerTrash}>
+                <CreateButton onClickHandler={redirectCustomerTrash}>
                     <TrashBinOutline
                         color={'#F20200'}
                         title={'delete'}

@@ -1,5 +1,5 @@
 import Layout from '../ui/Layout.jsx';
-import useAuth from '../../hooks/useAuth.jsx';
+import useAuth from '../../providers/useAuth.jsx';
 import HeaderTitle from '../ui/partials/HeaderTitle.jsx';
 
 const Dashboard = () => {

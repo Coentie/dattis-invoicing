@@ -1,12 +1,10 @@
 import Sidebar from './Sidebar.jsx';
-import useAuth from '../../hooks/useAuth.jsx';
+import useAuth from '../../providers/useAuth.jsx';
 import { AiOutlineUser } from 'react-icons/ai';
 import { IoIosNotificationsOutline } from 'react-icons/io';
 import CreateButton from './partials/buttons/CreateButton.jsx';
 
 const Layout = (props) => {
-    const { auth } = useAuth();
-
     return (
         <div className={'w-full flex min-h-screen bg-gray-50 rounded-r-xl'}>
             <div className={'w-1/6 relative z-10 flex flex-col'}>

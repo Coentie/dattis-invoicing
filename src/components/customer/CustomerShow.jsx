@@ -2,9 +2,10 @@ import Layout from '../ui/Layout.jsx';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import HeaderTitle from '../ui/partials/HeaderTitle.jsx';
-import { axiosPrivate } from '../../util/axios/index.js';
+import useAxios from '../../providers/useAxios.jsx';
 
 export default () => {
+    const {axios, axiosPrivate} = useAxios();
     const [customer, setCustomer] = useState(null);
     const { id } = useParams();
 

@@ -2,6 +2,7 @@ import CustomerIndexList from '../../components/customer/CustomerIndexList.jsx';
 import CustomerShow from '../../components/customer/CustomerShow.jsx';
 import Home from '../../Home.jsx';
 import Dashboard from '../../components/dashboard/index.jsx';
+import { CustomerProvider } from '../../context/customer/CustomerContext.jsx';
 
 export default [
     {
@@ -14,7 +15,7 @@ export default [
     },
     {
         path: "/customers",
-        element: <CustomerIndexList />
+        element: <CustomerProvider><CustomerIndexList /></CustomerProvider>
     },
     {
         path: "/customers/:id",

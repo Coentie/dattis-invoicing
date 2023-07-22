@@ -1,7 +1,9 @@
+import { Link } from 'react-router-dom';
+
 export default ({url, name}) => {
     return (
-        <a href={url} className={"transition ease-in-out duration-300 hover:text-primary"}>
+        <Link to={url} className={"transition ease-in-out duration-300 hover:text-primary"}>
             {name}
-        </a>
+        </Link>
     )
 }

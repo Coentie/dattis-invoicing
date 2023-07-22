@@ -4,13 +4,14 @@ import {  RouterProvider, } from 'react-router-dom';
 import './index.css'
 import router from './util/router/index.js';
 import { AuthProvider } from './context/AuthProvider.jsx';
-
-
+import { AxiosProvider } from './context/AxiosContext.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
       <AuthProvider>
-        <RouterProvider router={router} />
+          <AxiosProvider>
+            <RouterProvider router={router} />
+          </AxiosProvider>
       </AuthProvider>
   </React.StrictMode>,
 )
