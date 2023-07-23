@@ -1,0 +1,26 @@
+.toast-notification-up {
+    -webkit-animation: move-up 1000ms normal ease-out;
+    animation: move-up 1000ms normal ease-out;
+}
+
+@-webkit-keyframes move-up {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes  move-up {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

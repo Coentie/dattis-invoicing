@@ -34,10 +34,10 @@ export default () => {
      * @param e
      * @returns {Promise<void>}
      */
-    const onSubmitHandler = async(e) => {
+    const onSubmitHandler = async (e) => {
         e.preventDefault();
         await onLoginClickHandler();
-    }
+    };
 
     const onEmailInput = e => setEmail(e.target.value);
     const onPasswordInput = e => setPassword(e.target.value);
@@ -60,7 +60,7 @@ export default () => {
                         <DotPatterns classes={'w-32 -top-12 left-12 rotate-45 opacity-20 absolute'}/>
                     </div>
 
-                    <form onSubmit={onSubmitHandler}>
+                    <form className={'w-full'} onSubmit={onSubmitHandler}>
                         <div className={'w-full flex flex-col mb-4'}>
                             <label htmlFor={'email'} className={'text-xl mb-1 text-gray-600'}>E-mail</label>
                             <input
@@ -89,10 +89,12 @@ export default () => {
 
                         <p className={'mt-2 text-primary mb-6'}>Wachtwoord vergeten?</p>
 
-                        <button type="button" onClick={onLoginClickHandler}
-                                className={'mono uppercase bg-primary hover:bg-primary-700 rounded-xl py-4 transition duration-300 ease-in-out'}>
-                            Login
-                        </button>
+                        <div className={'w-full flex justify-end'}>
+                            <button type="button" onClick={onLoginClickHandler}
+                                    className={'mono uppercase bg-primary hover:bg-primary-700 rounded-xl py-3 px-8 transition duration-300 ease-in-out'}>
+                                Login
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
